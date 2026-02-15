@@ -107,7 +107,7 @@ export default function AvatarPage() {
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50">
           <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-            <h2 className="text-lg font-semibold mb-4">Coming Soon!</h2>
+            <h2 className="text-lg text-black font-semibold mb-4">Coming Soon!</h2>
             <button
               onClick={() => setShowPopup(false)}
               className="px-4 py-2 bg-[#075985] text-white rounded-lg"
