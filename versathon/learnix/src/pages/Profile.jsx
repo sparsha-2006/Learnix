@@ -53,10 +53,10 @@ export default function Profile() {
         await setDoc(
           doc(db, "users", userId),
           { name, email, bio },
-          { merge: true } // merge with existing document
+          { merge: true }
         );
         console.log("Profile saved in Firestore");
-        navigate("/dashboard"); // redirect after save
+        navigate("/dashboard");
       } catch (error) {
         console.error("Error saving profile:", error);
       }
@@ -79,7 +79,7 @@ export default function Profile() {
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className={`w-full mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 ${
+            className={`w-full text-black mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 ${
               errors.name ? "border-red-500 focus:ring-red-400" : "focus:ring-blue-400"
             }`}
           />
@@ -91,7 +91,7 @@ export default function Profile() {
             placeholder="user@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={`w-full mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 ${
+            className={`w-full text-black mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 ${
               errors.email ? "border-red-500 focus:ring-red-400" : "focus:ring-blue-400"
             }`}
           />
@@ -103,7 +103,7 @@ export default function Profile() {
             placeholder="Add a short bio"
             onChange={(e) => setBio(e.target.value)}
             rows={4}
-            className="w-full mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 resize-none focus:ring-blue-400"
+            className="w-full text-black mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 resize-none focus:ring-blue-400"
           />
 
           <button
@@ -155,4 +155,5 @@ export default function Profile() {
       </div>
     </div>
   );
+
 }
