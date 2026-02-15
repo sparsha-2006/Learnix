@@ -1,9 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/Logo.png";
 
 function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [profileOpen, setProfileOpen] = useState(false);
+
+   const hideOnPaths = ["/login", "/signup"];
+   if (hideOnPaths.includes(location.pathname)) return null;
 
   const navItems = [
     { name: "Dashboard", path: "/dashboard" },
@@ -22,7 +27,7 @@ function Navbar() {
             to="/dashboard"
             className="text-2xl font-bold text-blue-400"
           >
-            Learnix
+            <img src={logo} className="h-30"/>
           </Link>
 
           {/* CENTER NAV ITEMS */}
@@ -46,11 +51,15 @@ function Navbar() {
           <div className="flex items-center space-x-6 relative">
 
             {/* Notification */}
-            <div className="relative cursor-pointer">
-              <span className="text-xl">🔔</span>
-              <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
-                2
-              </span>
+            <div 
+              className="relative cursor-pointer"
+              onClick={() => navigate("/notifications")}
+            >
+              <img 
+                src="https://cdn-icons-png.flaticon.com/128/8338/8338801.png" 
+                className="w-10 h-10 bg-white rounded-full p-2"
+                alt="Notifications"
+              />
             </div>
 
             {/* Avatar */}
@@ -59,7 +68,7 @@ function Navbar() {
                 onClick={() => setProfileOpen(!profileOpen)}
                 className="w-10 h-10 bg-blue-500 hover:bg-blue-600 transition rounded-full flex items-center justify-center"
               >
-                👤
+                <img src="https://cdn-icons-png.flaticon.com/128/456/456212.png" className="w-8 h-8 rounded-full invert"/>
               </button>
 
               {/* DROPDOWN */}
