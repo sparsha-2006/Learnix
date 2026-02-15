@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Notification from "./pages/Notification";
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/student" element={<Student />} />
           <Route path="/avatar" element={<AvatarPage />} />
+          <Route path="/notifications" element={<Notification />} />
 
           <Route
             path="/quiz"
