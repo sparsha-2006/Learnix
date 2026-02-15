@@ -1,81 +1,47 @@
-// import { useState } from "react";
 
-// import StudentProfile from "../components/student/StudentProfile";
-// import Courses from "../components/student/Courses";
-// import QuizSection from "../components/student/QuizSection";
-// import Events from "../components/student/Events";
-// import Leaderboard from "../components/Leaderboard";
-
-// function Student() {
-//   const [active, setActive] = useState("courses");
-//   const [xp, setXp] = useState(0);
-
-//   const level = Math.floor(xp / 100);
-
-//   return (
-//     <div style={{ padding: "20px" }}>
-
-//       {/* Motivational Text */}
-//       <h1 style={{ textAlign: "center" }}>
-//         🚀 Learn Today. Lead Tomorrow.
-//       </h1>
-
-//       {/* Profile */}
-//       <StudentProfile xp={xp} level={level} />
-
-//       {/* Navigation Buttons */}
-//       <div style={{ marginTop: "20px" }}>
-//         <button onClick={() => setActive("courses")}>Courses</button>
-//         <button onClick={() => setActive("quiz")}>Quiz</button>
-//         <button onClick={() => setActive("events")}>Events</button>
-//         <button onClick={() => setActive("leaderboard")}>Leaderboard</button>
-//       </div>
-
-//       {/* Section Render */}
-//       <div style={{ marginTop: "30px" }}>
-//         {active === "courses" && <Courses />}
-//         {active === "quiz" && <QuizSection setXp={setXp} />}
-//         {active === "events" && <Events />}
-//         {active === "leaderboard" && <Leaderboard xp={xp} />}
-//       </div>
-
-//     </div>
-//   );
-// }
-
-// export default Student;
 import { useState } from "react";
 
 function Student() {
   const [activeTab, setActiveTab] = useState("dashboard");
 
+  const tabs = [
+    { id: "dashboard", label: "Dashboard", icon: "🏠" },
+    { id: "subjects", label: "Subjects", icon: "📚" },
+    { id: "internals", label: "Internals", icon: "📝" },
+    { id: "timetable", label: "Timetable", icon: "📅" },
+    { id: "results", label: "Results", icon: "📊" },
+  ];
+
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
         return (
-          <div>
-            <h1>Welcome Back 👨‍💻</h1>
-            <p>Branch: CSE | Semester: 5 | CGPA: 8.7</p>
+          <div className="space-y-4">
+            <h1 className="text-3xl font-bold">Welcome Back 👨‍💻</h1>
+            <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+              <p className="text-gray-300">Branch: CSE</p>
+              <p className="text-gray-300">Semester: 5</p>
+              <p className="text-gray-300">CGPA: 8.7</p>
+            </div>
           </div>
         );
 
       case "subjects":
         return (
           <div>
-            <h2>📚 Subjects</h2>
-            <div className="subjects-grid">
-              <div className="subject-card">
-                <h3>Data Structures</h3>
-                <p>18CS32 | Credits: 4</p>
-              </div>
-              <div className="subject-card">
-                <h3>Operating Systems</h3>
-                <p>18CS53 | Credits: 4</p>
-              </div>
-              <div className="subject-card">
-                <h3>DBMS</h3>
-                <p>18CS54 | Credits: 4</p>
-              </div>
+            <h2 className="text-2xl font-semibold mb-6">📚 Subjects</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {["Data Structures", "Operating Systems", "DBMS"].map(
+                (subject, index) => (
+                  <div
+                    key={index}
+                    className="bg-slate-800 p-6 rounded-xl shadow-md hover:scale-105 hover:shadow-2xl transition duration-300 cursor-pointer"
+                  >
+                    <h3 className="text-xl font-semibold">{subject}</h3>
+                    <p className="text-gray-400 mt-2">Credits: 4</p>
+                  </div>
+                )
+              )}
             </div>
           </div>
         );
@@ -83,35 +49,43 @@ function Student() {
       case "internals":
         return (
           <div>
-            <h2>📝 Internal Marks</h2>
-            <p>Data Structures - 18/20</p>
-            <p>Operating Systems - 16/20</p>
-            <p>DBMS - 19/20</p>
+            <h2 className="text-2xl font-semibold mb-4">📝 Internal Marks</h2>
+            <div className="space-y-4">
+              {[
+                { name: "Data Structures", marks: 18 },
+                { name: "Operating Systems", marks: 16 },
+                { name: "DBMS", marks: 19 },
+              ].map((item, index) => (
+                <div key={index}>
+                  <p>{item.name}</p>
+                  <div className="w-full bg-slate-700 rounded-full h-3 mt-2">
+                    <div
+                      className="bg-blue-500 h-3 rounded-full transition-all duration-500"
+                      style={{ width: `${item.marks * 5}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         );
 
       case "timetable":
         return (
           <div>
-            <h2>📅 Timetable</h2>
-            <p>Monday - DS, OS</p>
-            <p>Tuesday - DBMS, AI</p>
+            <h2 className="text-2xl font-semibold mb-4">📅 Timetable</h2>
+            <div className="bg-slate-800 p-6 rounded-xl shadow-lg">
+              <p>Monday — DS, OS</p>
+              <p>Tuesday — DBMS, AI</p>
+            </div>
           </div>
         );
 
       case "results":
         return (
-          <div>
-            <h2>📊 Results</h2>
-            <p>SGPA: 8.7</p>
-          </div>
-        );
-
-      case "settings":
-        return (
-          <div>
-            <h2>⚙️ Settings</h2>
-            <p>Profile Settings</p>
+          <div className="bg-slate-800 p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4">📊 Results</h2>
+            <p className="text-lg">SGPA: <span className="text-blue-400 font-bold">8.7</span></p>
           </div>
         );
 
@@ -121,23 +95,35 @@ function Student() {
   };
 
   return (
-    <div className="student-layout">
+    <div className="flex min-h-screen bg-slate-900 text-white">
 
       {/* Sidebar */}
-      <aside className="sidebar">
-        <h2 className="logo">🎓 VTU Portal</h2>
-        <ul>
-          <li onClick={() => setActiveTab("dashboard")}>🏠 Dashboard</li>
-          <li onClick={() => setActiveTab("subjects")}>📚 Subjects</li>
-          <li onClick={() => setActiveTab("internals")}>📝 Internals</li>
-          <li onClick={() => setActiveTab("timetable")}>📅 Timetable</li>
-          <li onClick={() => setActiveTab("results")}>📊 Results</li>
-          <li onClick={() => setActiveTab("settings")}>⚙️ Settings</li>
+      <aside className="w-64 bg-slate-950 p-6 shadow-xl hidden md:block">
+        <h2 className="text-2xl font-bold mb-8 text-blue-400">
+          🎓 VTU Portal
+        </h2>
+
+        <ul className="space-y-3">
+          {tabs.map((tab) => (
+            <li
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`p-3 rounded-lg cursor-pointer transition-all duration-200 flex items-center space-x-3
+                ${
+                  activeTab === tab.id
+                    ? "bg-blue-600 shadow-lg"
+                    : "hover:bg-slate-800 hover:translate-x-1"
+                }`}
+            >
+              <span>{tab.icon}</span>
+              <span>{tab.label}</span>
+            </li>
+          ))}
         </ul>
       </aside>
 
       {/* Main Content */}
-      <main className="main-content">
+      <main className="flex-1 p-8">
         {renderContent()}
       </main>
 
@@ -146,4 +132,3 @@ function Student() {
 }
 
 export default Student;
-

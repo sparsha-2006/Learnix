@@ -64,11 +64,11 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setProfileOpen(!profileOpen)}
-                className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center"
+                className="w-11 h-11 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/456/456212.png"
-                  className="w-8 h-8 invert"
+                  className="w-6 h-6 invert"
                   alt="Profile"
                 />
               </button>
