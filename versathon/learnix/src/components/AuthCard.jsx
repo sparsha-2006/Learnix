@@ -87,7 +87,7 @@ export default function AuthCard({
           Continue with Google
         </button>
 
-        <p>
+        <p style={styles.bottomText}>
           {bottomText}{" "}
           <Link to={bottomLinkHref} style={styles.link}>{bottomLinkText}</Link>
         </p>
@@ -111,6 +111,9 @@ const styles = {
     color: "#075985",
     textDecoration: "none",
     fontWeight: "bold",
+  },
+  bottomText: {
+    color: "#666",
   },
   container: {
     height: "100vh",
