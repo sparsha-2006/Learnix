@@ -17,10 +17,6 @@ import Notification from "./pages/Notification";
 import DailyChallenge from "./pages/DailyChallenge";
 
 function App() {
-  const [selectedSubject, setSelectedSubject] = useState(null);
-  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
-  const [quizSummary, setQuizSummary] = useState(null);
-
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-slate-900 text-white">
