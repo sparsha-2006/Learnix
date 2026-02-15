@@ -39,7 +39,7 @@ function App() {
             <Route path="/avatar" element={<AvatarPage />} />
             <Route path="/notifications" element={<Notification />} />
 
-            {/* ✅ Daily Challenge */}
+            {/* Daily Challenge */}
             <Route path="/daily-challenge" element={<DailyChallenge />} />
 
             {/* Quiz Flow */}
