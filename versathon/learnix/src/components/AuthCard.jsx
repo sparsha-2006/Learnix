@@ -50,7 +50,7 @@ export default function AuthCard({
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      navigate("/dashboard");
+      navigate("/student");
     } catch (error) {
       alert(error.message);
     }

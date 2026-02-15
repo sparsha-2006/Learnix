@@ -9,6 +9,7 @@ import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 import SubjectSelect from "./pages/SubjectSelect";
 import DifficultySelect from "./pages/DifficultySelect";
+import AvatarPage from "./pages/AvatarPage";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -29,6 +30,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/student" element={<Student />} />
+          <Route path="/avatar" element={<AvatarPage />} />
 
           <Route
             path="/quiz"
