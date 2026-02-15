@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -17,6 +17,11 @@ import Notification from "./pages/Notification";
 import DailyChallenge from "./pages/DailyChallenge";
 
 function App() {
+  // ✅ ADD THESE STATES
+  const [selectedSubject, setSelectedSubject] = useState(null);
+  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+  const [quizSummary, setQuizSummary] = useState(null);
+
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-slate-900 text-white">
@@ -24,6 +29,7 @@ function App() {
 
         <main className="flex-grow flex justify-center p-6">
           <Routes>
+
             {/* Auth */}
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login />} />
@@ -59,6 +65,7 @@ function App() {
                 )
               }
             />
+
           </Routes>
         </main>
 

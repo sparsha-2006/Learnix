@@ -132,7 +132,9 @@ const styles = {
     padding: "10px",
     margin: "10px 0",
     border: "1px solid black",
-    borderRadius:"5px"
+    borderRadius:"5px",
+    color:"black",
+    background:"whilte",
   },
   button: {
     width: "100%",

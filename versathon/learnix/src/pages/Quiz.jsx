@@ -98,12 +98,13 @@ function Quiz({ selectedSubject, selectedDifficulty, setQuizSummary }) {
               key={index}
               onClick={() => handleOptionSelect(option)}
               className={`w-full py-4 rounded-xl border 
-                ${
-                  selectedOption === option
-                    ? "bg-blue-600 text-white border-blue-600"
-                    : "bg-gray-50 hover:bg-blue-50 border-gray-200"
-                }
-                transition duration-300 shadow-sm`}
+  ${
+    selectedOption === option
+      ? "bg-blue-600 text-white border-blue-600"
+      : "bg-gray-50 text-gray-800 hover:bg-blue-50 border-gray-200"
+  }
+  transition duration-300 shadow-sm`}
+
             >
               {option}
             </button>
