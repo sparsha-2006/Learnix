@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
-import Student from "./pages/Student";
+import Student from "./pages/student";
 import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 import SubjectSelect from "./pages/SubjectSelect";
