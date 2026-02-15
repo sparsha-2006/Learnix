@@ -3,15 +3,13 @@ function Result({ quizSummary }) {
   const percentage = Math.round((score / total) * 100);
 
   return (
-    <div className="min-h-screen flex justify-center items-start py-20 px-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-200 via-blue-300 to-slate-300 py-12 px-4">
       
-      <div className="w-full px-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* MAIN RESULT CARD */}
-        <div className="bg-white rounded-3xl shadow-2xl p-16 text-center  max-w-full">
-
-          <h1 className="text-4xl font-bold text-gray-800 mb-6">
-            🎯 Quiz Result
+        <div className="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 lg:p-14 text-center  mb-16">        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+             Quiz Result
           </h1>
 
           <div className="text-6xl font-extrabold text-blue-600 mb-4">
@@ -24,29 +22,29 @@ function Result({ quizSummary }) {
 
           {percentage === 100 && (
             <p className="text-green-600 font-semibold mt-2">
-              🔥 Perfect Score! Outstanding performance!
+               Perfect Score! Outstanding performance!
             </p>
           )}
 
           {percentage >= 70 && percentage < 100 && (
             <p className="text-blue-600 font-semibold mt-2">
-              👏 Great job! Keep pushing!
+               Great job! Keep pushing!
             </p>
           )}
 
           {percentage < 70 && (
             <p className="text-red-600 font-semibold mt-2">
-              📚 Keep practicing — you’ll improve!
+               Keep practicing — you’ll improve!
             </p>
           )}
         </div>
 
         {/* TOPIC PERFORMANCE */}
         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-          📊 Topic Performance
+           Topic Performance
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
           {Object.entries(topicStats).map(([topic, data]) => {
             const accuracy = Math.round(
@@ -58,13 +56,13 @@ function Result({ quizSummary }) {
 
             if (accuracy >= 75) {
               badgeColor = "bg-green-100 text-green-700";
-              message = "Strong Area 💪";
+              message = "Strong Area ";
             } else if (accuracy >= 50) {
               badgeColor = "bg-yellow-100 text-yellow-700";
-              message = "Keep Practicing 👍";
+              message = "Keep Practicing ";
             } else {
               badgeColor = "bg-red-100 text-red-700";
-              message = "Needs Improvement ⚠️";
+              message = "Needs Improvement ";
             }
 
             return (
@@ -96,7 +94,7 @@ function Result({ quizSummary }) {
             onClick={() => window.location.reload()}
             className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 hover:scale-105 transition duration-300"
           >
-            🔄 Retake Quiz
+             Retake Quiz
           </button>
         </div>
 
