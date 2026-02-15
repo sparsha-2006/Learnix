@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
-import Student from "./pages/student";
+import Student from "./pages/Student";
 import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 import SubjectSelect from "./pages/SubjectSelect";
@@ -15,6 +15,7 @@ import DifficultySelect from "./pages/DifficultySelect";
 import AvatarPage from "./pages/AvatarPage";
 import Notification from "./pages/Notification";
 import DailyChallenge from "./pages/DailyChallenge";
+import Profile from "./pages/Profile";
 
 function App() {
   // ✅ ADD THESE STATES
@@ -43,6 +44,8 @@ function App() {
 
             {/* Daily Challenge */}
             <Route path="/daily-challenge" element={<DailyChallenge />} />
+
+            <Route path="/profile" element={<Profile />} />
 
             {/* Quiz Flow */}
             <Route
