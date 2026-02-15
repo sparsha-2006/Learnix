@@ -5,19 +5,20 @@ function Student() {
   const [activeTab, setActiveTab] = useState("dashboard");
 
   const tabs = [
-    { id: "dashboard", label: "Dashboard", icon: "🏠" },
-    { id: "subjects", label: "course", icon: "📚" },
-    { id: "internals", label: "Internals", icon: "📝" },
-    { id: "timetable", label: "Timetable", icon: "📅" },
-    { id: "results", label: "Results", icon: "📊" },
+    { id: "dashboard", label: "Dashboard" },
+    { id: "subjects", label: "course" },
+    { id: "internals", label: "Internals" },
+    { id: "timetable", label: "Timetable" },
+    { id: "results", label: "Results"},
   ];
 
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
+        
         return (
           <div className="space-y-4">
-            <h1 className="text-3xl font-bold">Welcome Back 👨‍💻</h1>
+            <h1 className="text-3xl font-bold">Hello Shiva</h1>
             <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
               <p className="text-gray-300">Branch: CSE</p>
               <p className="text-gray-300">Semester: 4</p>
@@ -29,7 +30,7 @@ function Student() {
       case "subjects":
         return (
           <div>
-            <h2 className="text-2xl font-semibold mb-6">📚 Subjects</h2>
+            <h2 className="text-2xl font-semibold mb-6">Course</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {["Data Structures", "Operating Systems", "Computer Communication and Networking","Maths"].map(
                 (subject, index) => (
@@ -49,7 +50,7 @@ function Student() {
       case "internals":
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-6">📝 Internal Marks</h2>
+      <h2 className="text-2xl font-semibold mb-6">Internal Marks</h2>
 
       <div className="grid md:grid-cols-2 gap-6">
         {[
@@ -115,10 +116,13 @@ function Student() {
       case "timetable":
         return (
           <div>
-            <h2 className="text-2xl font-semibold mb-4">📅 Timetable</h2>
+            <h2 className="text-2xl font-semibold mb-4"> Timetable</h2>
             <div className="bg-slate-800 p-6 rounded-xl shadow-lg">
               <p>Monday — DS, OS</p>
-              <p>Tuesday — DBMS, AI</p>
+              <p>Tuesday — CCN, AI,</p>
+                <p>Wednesday — DS, Maths</p>
+                <p>Thursday — OS, CCN</p>
+                <p>Friday — AI, Maths</p>
             </div>
           </div>
         );
@@ -126,7 +130,7 @@ function Student() {
       case "results":
         return (
           <div className="bg-slate-800 p-6 rounded-xl shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4">📊 Results</h2>
+            <h2 className="text-2xl font-semibold mb-4"> Results</h2>
             <p className="text-lg">SGPA: <span className="text-blue-400 font-bold">8.7</span></p>
           </div>
         );
@@ -136,41 +140,41 @@ function Student() {
     }
   };
 
-  return (
-    <div className="flex min-h-screen bg-slate-900 text-white">
+ return (
+  <div className="flex bg-slate-900 text-white min-h-screen">
 
-      {/* Sidebar */}
-      <aside className="w-64 bg-slate-950 p-6 shadow-xl hidden md:block">
-        <h2 className="text-2xl font-bold mb-8 text-blue-400">
-          🎓 VTU Portal
-        </h2>
+    {/* Sidebar */}
+    <aside className="fixed top-0 left-0 h-screen w-64 bg-slate-950 p-6 shadow-xl hidden md:block">
+      <h2 className="text-2xl font-bold mb-8 text-blue-400">
+        STUDY SPACE
+      </h2>
 
-        <ul className="space-y-3">
-          {tabs.map((tab) => (
-            <li
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`p-3 rounded-lg cursor-pointer transition-all duration-200 flex items-center space-x-3
-                ${
-                  activeTab === tab.id
-                    ? "bg-blue-600 shadow-lg"
-                    : "hover:bg-slate-800 hover:translate-x-1"
-                }`}
-            >
-              <span>{tab.icon}</span>
-              <span>{tab.label}</span>
-            </li>
-          ))}
-        </ul>
-      </aside>
+      <ul className="space-y-3">
+        {tabs.map((tab) => (
+          <li
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`p-3 rounded-lg cursor-pointer transition-all duration-200
+              ${
+                activeTab === tab.id
+                  ? "bg-blue-600 shadow-lg"
+                  : "hover:bg-slate-800"
+              }`}
+          >
+            {tab.label}
+          </li>
+        ))}
+      </ul>
+    </aside>
 
-      {/* Main Content */}
-      <main className="flex-1 p-8">
-        {renderContent()}
-      </main>
-
+    {/* Main Content */}
+    <div className="flex-1 ml-0 md:ml-64 p-8">
+      {renderContent()}
     </div>
-  );
+
+  </div>
+);
+
 }
 
 export default Student;
