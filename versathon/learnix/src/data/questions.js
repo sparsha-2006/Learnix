@@ -1,84 +1,515 @@
 export const questions = [
-  // EASY
+
+  // data structure easy 
   {
     id: 1,
     subject: "Data Structures",
     topic: "Arrays",
     difficulty: "easy",
     question: "What is the first index of an array?",
-    options: ["0", "1", "-1", "Depends"],
-    answer: "0"
+    options: ["0", "1", "-1", "Depends on language"],
+    answer: "0",
+  },
+  {
+    id: 2,
+    subject: "Data Structures",
+    topic: "Queue",
+    difficulty: "easy",
+    question: "Which data structure follows FIFO principle?",
+    options: ["Stack", "Queue", "Tree", "Graph"],
+    answer: "Queue",
+  },
+  {
+    id: 3,
+    subject: "Data Structures",
+    topic: "Stack",
+    difficulty: "easy",
+    question: "Which operation removes the top element from a stack?",
+    options: ["push()", "enqueue()", "pop()", "insert()"],
+    answer: "pop()",
+  },
+  {
+    id: 4,
+    subject: "Data Structures",
+    topic: "Linked List",
+    difficulty: "easy",
+    question: "Each node in a singly linked list contains:",
+    options: [
+      "Data and next pointer",
+      "Only data",
+      "Two pointers",
+      "Only pointer"
+    ],
+    answer: "Data and next pointer",
+  },
+  {
+    id: 5,
+    subject: "Data Structures",
+    topic: "Arrays",
+    difficulty: "easy",
+    question: "Accessing an element in an array takes:",
+    options: ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+    answer: "O(1)",
   },
 
-  {
-  id: 2,
-  subject: "Data Structures",
-  topic: "Arrays",
-  difficulty: "easy",
-  question: "Which data structure follows FIFO?",
-  options: ["Stack", "Queue", "Tree", "Graph"],
-  answer: "Queue"
-},
-
-{
-  id: 3,
-  subject: "Data Structures",
-  topic: "Stack",
-  difficulty: "easy",
-  question: "Which operation removes an element from a stack?",
-  options: ["push()", "enqueue()", "pop()", "insert()"],
-  answer: "pop()"
-},
-
-{
-  id: 4,
-  subject: "Data Structures",
-  topic: "Linked List",
-  difficulty: "easy",
-  question: "In a singly linked list, each node contains:",
-  options: [
-    "Data and pointer to next node",
-    "Only data",
-    "Pointer only",
-    "Two pointers"
-  ],
-  answer: "Data and pointer to next node"
-},
-
-{
-  id: 5,
-  subject: "Data Structures",
-  topic: "Arrays",
-  difficulty: "easy",
-  question: "What is the time complexity to access an element in an array?",
-  options: ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
-  answer: "O(1)"
-},
-
-
-  // MEDIUM
+  // data structure medium
   {
     id: 6,
     subject: "Data Structures",
-    topic: "Arrays",
+    topic: "Searching",
     difficulty: "medium",
-    question: "Which method adds element at end?",
-    options: ["push()", "pop()", "map()", "filter()"],
-    answer: "push()"
+    question: "Binary search requires the array to be:",
+    options: ["Unsorted", "Sorted", "Reversed", "Circular"],
+    answer: "Sorted",
+  },
+  {
+    id: 7,
+    subject: "Data Structures",
+    topic: "Recursion",
+    difficulty: "medium",
+    question: "Recursion uses which data structure internally?",
+    options: ["Queue", "Stack", "Tree", "Graph"],
+    answer: "Stack",
+  },
+  {
+    id: 8,
+    subject: "Data Structures",
+    topic: "Linked List",
+    difficulty: "medium",
+    question: "Insertion at the beginning of a linked list takes:",
+    options: ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+    answer: "O(1)",
+  },
+  {
+    id: 9,
+    subject: "Data Structures",
+    topic: "Sorting",
+    difficulty: "medium",
+    question: "Which sorting algorithm has average time complexity O(n log n)?",
+    options: ["Bubble Sort", "Selection Sort", "Merge Sort", "Insertion Sort"],
+    answer: "Merge Sort",
+  },
+  {
+    id: 10,
+    subject: "Data Structures",
+    topic: "Queue",
+    difficulty: "medium",
+    question: "Circular queue is used to:",
+    options: [
+      "Avoid memory wastage",
+      "Sort elements",
+      "Reverse elements",
+      "Delete nodes"
+    ],
+    answer: "Avoid memory wastage",
   },
 
-  // Add 4 more medium
-
-  // HARD
+  //data structure hard
   {
     id: 11,
     subject: "Data Structures",
-    topic: "Recursion",
+    topic: "Searching",
     difficulty: "hard",
-    question: "What is the time complexity of binary search?",
-    options: ["O(n)", "O(log n)", "O(n^2)", "O(1)"],
-    answer: "O(log n)"
-  }
+    question: "Time complexity of binary search is:",
+    options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+    answer: "O(log n)",
+  },
+  {
+    id: 12,
+    subject: "Data Structures",
+    topic: "Sorting",
+    difficulty: "hard",
+    question: "Worst-case time complexity of Quick Sort is:",
+    options: ["O(n)", "O(n log n)", "O(n²)", "O(log n)"],
+    answer: "O(n²)",
+  },
+  {
+    id: 13,
+    subject: "Data Structures",
+    topic: "Tree",
+    difficulty: "hard",
+    question: "Maximum number of nodes in a binary tree of height h is:",
+    options: ["2^h - 1", "2h", "h²", "h log h"],
+    answer: "2^h - 1",
+  },
+  {
+    id: 14,
+    subject: "Data Structures",
+    topic: "Graph",
+    difficulty: "hard",
+    question: "DFS traversal uses which data structure?",
+    options: ["Queue", "Stack", "Heap", "Array"],
+    answer: "Stack",
+  },
+  {
+    id: 15,
+    subject: "Data Structures",
+    topic: "Hashing",
+    difficulty: "hard",
+    question: "Collision in hashing occurs when:",
+    options: [
+      "Two keys map to same index",
+      "Array is sorted",
+      "Index is empty",
+      "Table is full"
+    ],
+    answer: "Two keys map to same index",
+  },
 
-  // Add 4 more hard
+  //operating system easy
+{
+  id: 16,
+  subject: "Operating Systems",
+  topic: "Basics",
+  difficulty: "easy",
+  question: "Which of the following is an operating system?",
+  options: ["Windows", "Python", "HTML", "Java"],
+  answer: "Windows",
+},
+{
+  id: 17,
+  subject: "Operating Systems",
+  topic: "Process",
+  difficulty: "easy",
+  question: "A program in execution is called:",
+  options: ["Thread", "Process", "Compiler", "Scheduler"],
+  answer: "Process",
+},
+{
+  id: 18,
+  subject: "Operating Systems",
+  topic: "Memory",
+  difficulty: "easy",
+  question: "Which memory is fastest?",
+  options: ["RAM", "Cache", "Hard Disk", "ROM"],
+  answer: "Cache",
+},
+{
+  id: 19,
+  subject: "Operating Systems",
+  topic: "CPU Scheduling",
+  difficulty: "easy",
+  question: "FCFS stands for:",
+  options: ["First Come First Serve", "Fast CPU First System", "First CPU First Serve", "None"],
+  answer: "First Come First Serve",
+},
+{
+  id: 20,
+  subject: "Operating Systems",
+  topic: "Deadlock",
+  difficulty: "easy",
+  question: "Deadlock occurs when:",
+  options: [
+    "Processes wait indefinitely",
+    "CPU is free",
+    "Memory is empty",
+    "System shuts down"
+  ],
+  answer: "Processes wait indefinitely",
+},
+
+// operating system medium
+{
+  id: 21,
+  subject: "Operating Systems",
+  topic: "CPU Scheduling",
+  difficulty: "medium",
+  question: "Which scheduling algorithm may cause starvation?",
+  options: ["FCFS", "Round Robin", "Priority Scheduling", "FIFO"],
+  answer: "Priority Scheduling",
+},
+{
+  id: 22,
+  subject: "Operating Systems",
+  topic: "Memory",
+  difficulty: "medium",
+  question: "Paging helps to:",
+  options: [
+    "Eliminate external fragmentation",
+    "Increase CPU speed",
+    "Reduce threads",
+    "Increase disk space"
+  ],
+  answer: "Eliminate external fragmentation",
+},
+{
+  id: 23,
+  subject: "Operating Systems",
+  topic: "Deadlock",
+  difficulty: "medium",
+  question: "Which is NOT a condition for deadlock?",
+  options: [
+    "Mutual Exclusion",
+    "Hold and Wait",
+    "Preemption",
+    "Circular Wait"
+  ],
+  answer: "Preemption",
+},
+{
+  id: 24,
+  subject: "Operating Systems",
+  topic: "Process",
+  difficulty: "medium",
+  question: "Context switching occurs when:",
+  options: [
+    "CPU switches between processes",
+    "Memory is full",
+    "Disk fails",
+    "User logs out"
+  ],
+  answer: "CPU switches between processes",
+},
+
+{
+  id: 25,
+  subject: "Operating Systems",
+  topic: "Threads",
+  difficulty: "medium",
+  question: "Threads within same process share:",
+  options: ["Code section", "Registers", "Stack", "Separate memory"],
+  answer: "Code section",
+},
+
+//operating system hard
+{
+  id: 26,
+  subject: "Operating Systems",
+  topic: "Scheduling",
+  difficulty: "hard",
+  question: "Round Robin scheduling depends on:",
+  options: [
+    "Time quantum",
+    "Memory size",
+    "CPU speed",
+    "Number of threads"
+  ],
+  answer: "Time quantum",
+},
+{
+  id: 27,
+  subject: "Operating Systems",
+  topic: "Memory",
+  difficulty: "hard",
+  question: "Thrashing occurs when:",
+  options: [
+    "Excessive paging",
+    "CPU overheating",
+    "Disk failure",
+    "Cache overflow"
+  ],
+  answer: "Excessive paging",
+},
+{
+  id: 28,
+  subject: "Operating Systems",
+  topic: "Deadlock",
+  difficulty: "hard",
+  question: "Banker’s algorithm is used for:",
+  options: [
+    "Deadlock avoidance",
+    "CPU scheduling",
+    "Memory allocation",
+    "File management"
+  ],
+  answer: "Deadlock avoidance",
+},
+{
+  id: 29,
+  subject: "Operating Systems",
+  topic: "Memory",
+  difficulty: "hard",
+  question: "Which replacement algorithm may suffer from Belady’s anomaly?",
+  options: ["FIFO", "LRU", "Optimal", "Clock"],
+  answer: "FIFO",
+},
+{
+  id: 30,
+  subject: "Operating Systems",
+  topic: "Process",
+  difficulty: "hard",
+  question: "Zombie process is:",
+  options: [
+    "Terminated but not removed from process table",
+    "Running process",
+    "Sleeping process",
+    "Deadlocked process"
+  ],
+  answer: "Terminated but not removed from process table",
+},
+//computer network easy
+{
+  id: 31,
+  subject: "Computer Networks",
+  topic: "Basics",
+  difficulty: "easy",
+  question: "What does LAN stand for?",
+  options: [
+    "Local Area Network",
+    "Large Area Network",
+    "Low Access Network",
+    "Linear Area Network"
+  ],
+  answer: "Local Area Network",
+},
+{
+  id: 32,
+  subject: "Computer Networks",
+  topic: "Protocols",
+  difficulty: "easy",
+  question: "Which protocol is used to browse websites?",
+  options: ["HTTP", "FTP", "SMTP", "ARP"],
+  answer: "HTTP",
+},
+{
+  id: 33,
+  subject: "Computer Networks",
+  topic: "IP",
+  difficulty: "easy",
+  question: "IPv4 address consists of:",
+  options: ["32 bits", "64 bits", "16 bits", "128 bits"],
+  answer: "32 bits",
+},
+{
+  id: 34,
+  subject: "Computer Networks",
+  topic: "OSI Model",
+  difficulty: "easy",
+  question: "How many layers are in OSI model?",
+  options: ["5", "6", "7", "8"],
+  answer: "7",
+},
+{
+  id: 35,
+  subject: "Computer Networks",
+  topic: "Transmission",
+  difficulty: "easy",
+  question: "Which device connects two networks?",
+  options: ["Router", "Switch", "Hub", "Repeater"],
+  answer: "Router",
+},
+//computer network medium
+{
+  id: 36,
+  subject: "Computer Networks",
+  topic: "Protocols",
+  difficulty: "medium",
+  question: "Which protocol is used for secure web browsing?",
+  options: ["HTTP", "HTTPS", "FTP", "ARP"],
+  answer: "HTTPS",
+},
+{
+  id: 37,
+  subject: "Computer Networks",
+  topic: "OSI Model",
+  difficulty: "medium",
+  question: "Which OSI layer handles encryption?",
+  options: [
+    "Application",
+    "Presentation",
+    "Transport",
+    "Network"
+  ],
+  answer: "Presentation",
+},
+{
+  id: 38,
+  subject: "Computer Networks",
+  topic: "IP",
+  difficulty: "medium",
+  question: "IPv6 address length is:",
+  options: ["32 bits", "64 bits", "128 bits", "256 bits"],
+  answer: "128 bits",
+},
+{
+  id: 39,
+  subject: "Computer Networks",
+  topic: "Transport",
+  difficulty: "medium",
+  question: "Which protocol is connection-oriented?",
+  options: ["UDP", "TCP", "ICMP", "ARP"],
+  answer: "TCP",
+},
+{
+  id: 40,
+  subject: "Computer Networks",
+  topic: "Switching",
+  difficulty: "medium",
+  question: "Which switching technique is used in internet?",
+  options: [
+    "Circuit Switching",
+    "Packet Switching",
+    "Message Switching",
+    "Hybrid Switching"
+  ],
+  answer: "Packet Switching",
+},
+//computer network hard
+{
+  id: 41,
+  subject: "Computer Networks",
+  topic: "Routing",
+  difficulty: "hard",
+  question: "Which algorithm is used in link-state routing?",
+  options: [
+    "Dijkstra’s Algorithm",
+    "Bellman-Ford",
+    "Prim’s Algorithm",
+    "Kruskal’s Algorithm"
+  ],
+  answer: "Dijkstra’s Algorithm",
+},
+{
+  id: 42,
+  subject: "Computer Networks",
+  topic: "Transport",
+  difficulty: "hard",
+  question: "TCP congestion control uses:",
+  options: [
+    "Slow Start",
+    "Fast Retransmit",
+    "Congestion Avoidance",
+    "All of the above"
+  ],
+  answer: "All of the above",
+},
+{
+  id: 43,
+  subject: "Computer Networks",
+  topic: "Security",
+  difficulty: "hard",
+  question: "SSL operates at which OSI layer?",
+  options: [
+    "Transport",
+    "Application",
+    "Presentation",
+    "Network"
+  ],
+  answer: "Presentation",
+},
+{
+  id: 44,
+  subject: "Computer Networks",
+  topic: "IP",
+  difficulty: "hard",
+  question: "Subnet mask is used to:",
+  options: [
+    "Identify network and host portion",
+    "Encrypt data",
+    "Increase bandwidth",
+    "Route packets"
+  ],
+  answer: "Identify network and host portion",
+},
+{
+  id: 45,
+  subject: "Computer Networks",
+  topic: "DNS",
+  difficulty: "hard",
+  question: "DNS primarily uses which protocol?",
+  options: ["TCP", "UDP", "HTTP", "FTP"],
+  answer: "UDP",
+},
+
+
 ];
