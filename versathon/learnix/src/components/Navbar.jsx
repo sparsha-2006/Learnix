@@ -1,15 +1,21 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/Logo.png";
 
 function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [profileOpen, setProfileOpen] = useState(false);
+
+  // Hide navbar on auth pages
+  const hideOnPaths = ["/login", "/signup"];
+  if (hideOnPaths.includes(location.pathname)) return null;
 
   const navItems = [
     { name: "Dashboard", path: "/dashboard" },
     { name: "Quiz", path: "/quiz" },
     { name: "Daily Challenge", path: "/daily-challenge" },
-    { name: "Avatar ", path: "/avatar" },
+    { name: "Avatar", path: "/avatar" },
   ];
 
   return (
@@ -18,11 +24,8 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link
-            to="/dashboard"
-            className="text-2xl font-bold text-blue-400"
-          >
-            Learnix
+          <Link to="/dashboard" className="flex items-center">
+            <img src={logo} alt="Learnix Logo" className="h-10" />
           </Link>
 
           {/* CENTER NAV ITEMS */}
@@ -46,11 +49,15 @@ function Navbar() {
           <div className="flex items-center space-x-6 relative">
 
             {/* Notification */}
-            <div className="relative cursor-pointer">
-              <span className="text-xl">🔔</span>
-              <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
-                2
-              </span>
+            <div
+              className="relative cursor-pointer"
+              onClick={() => navigate("/notifications")}
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/8338/8338801.png"
+                className="w-10 h-10 bg-white rounded-full p-2"
+                alt="Notifications"
+              />
             </div>
 
             {/* Avatar */}
@@ -59,13 +66,16 @@ function Navbar() {
                 onClick={() => setProfileOpen(!profileOpen)}
                 className="w-10 h-10 bg-blue-500 hover:bg-blue-600 transition rounded-full flex items-center justify-center"
               >
-                👤
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/456/456212.png"
+                  className="w-8 h-8 rounded-full invert"
+                  alt="Profile"
+                />
               </button>
 
               {/* DROPDOWN */}
               {profileOpen && (
                 <div className="absolute right-0 mt-3 w-44 bg-white text-gray-700 rounded-xl shadow-xl py-2 z-50">
-
                   <Link
                     to="/profile"
                     className="block px-4 py-2 hover:bg-gray-100 transition"
@@ -83,13 +93,11 @@ function Navbar() {
                   >
                     Logout
                   </button>
-
                 </div>
               )}
             </div>
 
           </div>
-
         </div>
       </div>
     </nav>
