@@ -25,7 +25,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/dashboard" className="flex items-center">
-            <img src={logo} alt="Learnix Logo" className="h-10" />
+            <img src={logo} alt="Learnix Logo" className="h-24" />
           </Link>
 
           {/* Center Nav */}
